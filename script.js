@@ -35,11 +35,11 @@ function drawTimer(frac) {
 function viewTimeRemaining() {
   // Set clock
   document.getElementById("timerClock").innerHTML =
-    ("0" + hours).slice(-2) +
+    ("00" + hours).slice(-2) +
     ":" +
-    ("0" + minutes).slice(-2) +
+    ("00" + minutes).slice(-2) +
     ":" +
-    ("0" + seconds).slice(-2);
+    ("00" + seconds).slice(-2);
 
   // console.log("Current: " + current + " Total: " + total);
   var current = +hours * 3600 + +minutes * 60 + +seconds;
