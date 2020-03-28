@@ -34,7 +34,7 @@ input[type="number"] {
 }
 
 #clearButton {
-  background-color: #C0C0C0;
+  background-color: #c0c0c0;
 }
 
 #defaultbtn {
@@ -43,8 +43,8 @@ input[type="number"] {
 }
 
 #graybtn {
-  background-color: #232B2B;
-  color: #DC3D24;
+  background-color: #232b2b;
+  color: #dc3d24;
 }
 
 #settings {

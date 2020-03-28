@@ -26,7 +26,7 @@ function drawTimer(frac) {
     "-moz-transform": "rotate(" + deg + "deg)",
     "-webkit-transform": "rotate(" + deg + "deg)",
     "-o-transform": "rotate(" + deg + "deg)",
-    transform: "rotate(" + deg + "deg)"
+    transform: "rotate(" + deg + "deg)",
   });
 
   $(".frac").html(frac);
@@ -153,7 +153,7 @@ var settings = {
   gray: function gray() {
     body.style.backgroundColor = "#232B2B";
     body.style.color = "#DC3D24";
-  }
+  },
 };
 
 function setUpEventListeners() {
@@ -170,7 +170,7 @@ function setUpEventListeners() {
   clearButton.addEventListener("click", clearTimer);
 }
 
-window.onload = function() {
+window.onload = function () {
   setUpEventListeners();
   drawTimer(0.0);
   body = document.querySelector("body");
