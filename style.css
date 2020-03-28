@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  width: 40px;
+}
+
+.controls {
+  margin: 20px;
+}
+
+#myTimer {
+  font-weight: bold;
+  margin: 20px;
+  font-size: 25px;
+}
+
+#startButton {
+  background-color: green;
+}
+
+#stopButton {
+  background-color: red;
+}
+
+#resumeButton {
+  background-color: yellow;
+}
+
+#clearButton {
+  background-color: #C0C0C0;
+}
+
+#defaultbtn {
+  background-color: white;
+  color: black;
+}
+
+#graybtn {
+  background-color: #232B2B;
+  color: #DC3D24;
+}
+
+#settings {
+  position: relative;
+  top: 50px;
+}
