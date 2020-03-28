@@ -3,7 +3,7 @@ const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./index.html",
+  template: "./src/index.html",
   filename: "./index.html", // Default root is the "dist" directory
   inlineSource: ".(js|css)$",
 });
@@ -16,7 +16,23 @@ const cleanWebpackPlugin = new CleanWebpackPlugin({
 });
 
 module.exports = {
-  entry: "./script.js",
+  mode: "production",
+  entry: "./src/script.js",
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     htmlWebpackPlugin,
     htmlWebpackInlineSourcePlugin,

@@ -18,11 +18,16 @@
   "homepage": "https://github.com/sarangak/visual-countdown-timer#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
     "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
     "html-webpack-plugin": "^4.0.3",
     "prettier": "^2.0.2",
     "prettylint": "^1.0.0",
+    "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "nosleep.js": "^0.9.0"
   }
 }
