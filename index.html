@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Created by Tyler Corazalla. Summer 2018
+     Modified by @sarangak. Spring 2020 -->
+<html lang="en">
+  <head>
+    <title>Countdown Timer</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/c17a7b2c-85db-4fd4-891d-e00a85208400%2Ffavicon.ico?v=1534457356059"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/timer.css" />
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="/nosleep-0.9.0-min.js"></script>
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <h1 class="hideable">Countdown Timer</h1>
+
+    <div id="controls" class="hideable">
+      <div class="controls">
+        H <input id="inputHours" type="number" min="0" value="0" /> M
+        <input id="inputMinutes" type="number" min="0" max="59" value="0" /> S
+        <input id="inputSeconds" type="number" min="0" max="59" value="0" />
+        <input id="hideBox" type="checkbox" label="hide on start" /> Hide
+        Controls on Start
+      </div>
+      <div class="controls">
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+        <button id="resumeButton">Resume</button>
+        <button id="clearButton">Clear</button>
+      </div>
+    </div>
+
+    <div id="timers">
+      <div id="timerPie" class="timer fill"></div>
+      <p id="timerClock"></p>
+    </div>
+
+    <audio id="ding">
+      <source
+        src="https://cdn.glitch.com/c17a7b2c-85db-4fd4-891d-e00a85208400%2Fding_sound.mp3?v=1534347219825"
+        type="audio/mpeg"
+      />
+    </audio>
+  </body>
+</html>
