@@ -1,6 +1,6 @@
-import './style.css';
-import './timer.css';
-import NoSleep from 'nosleep.js';
+import "./style.css";
+import "./timer.css";
+import NoSleep from "nosleep.js";
 
 var body;
 var noSleep = new NoSleep();
