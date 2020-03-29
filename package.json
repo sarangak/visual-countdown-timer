@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "prettylint 'src/**/*'",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "prettylint": "^1.0.0",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "nosleep.js": "^0.9.0"
