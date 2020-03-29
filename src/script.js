@@ -1,5 +1,6 @@
+import "./normalize.css";
+import "./barebones.css";
 import "./style.css";
-import "./timer.css";
 import $ from "jquery";
 import NoSleep from "nosleep.js";
 

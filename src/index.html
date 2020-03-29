@@ -13,17 +13,29 @@
     />
   </head>
   <body>
-    <h1 class="hideable">Countdown Timer</h1>
-
+    <div class="grid-container full">
+      <h1 class="hideable">Countdown Timer</h1>
+    </div>
     <div id="controls" class="hideable">
-      <div class="controls">
-        H <input id="inputHours" type="number" min="0" value="0" /> M
-        <input id="inputMinutes" type="number" min="0" max="59" value="0" /> S
-        <input id="inputSeconds" type="number" min="0" max="59" value="0" />
-        <input id="hideBox" type="checkbox" label="hide on start" /> Hide
-        Controls on Start
+      <div class="controls grid-container quarters">
+        <div>
+          <label for="inputHours">Hours</label>
+          <input id="inputHours" type="number" min="0" max="120" value="0" />
+        </div>
+        <div>
+          <label for="inputMinutes">Minutes</label>
+          <input id="inputMinutes" type="number" min="0" max="59" value="0" />
+        </div>
+        <div>
+          <label for="inputSeconds">Seconds</label>
+          <input id="inputSeconds" type="number" min="0" max="59" value="0" />
+        </div>
+        <div>
+          <label for="hideBox"> Hide Controls on Start </label>
+          <input id="hideBox" type="checkbox" />
+        </div>
       </div>
-      <div class="controls">
+      <div class="controls grid-container quarters">
         <button id="startButton">Start</button>
         <button id="stopButton">Stop</button>
         <button id="resumeButton">Resume</button>
@@ -31,9 +43,9 @@
       </div>
     </div>
 
-    <div id="timers">
+    <div id="timers" class="grid-container full">
       <div id="timerPie" class="timer fill"></div>
-      <p id="timerClock"></p>
+      <h3 id="timerClock"></h3>
     </div>
 
     <audio id="ding">
