@@ -15,6 +15,12 @@ input[type="number"] {
   margin: 20px;
 }
 
+
+.controls > button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 #myTimer {
   font-weight: bold;
   margin: 20px;
@@ -35,19 +41,4 @@ input[type="number"] {
 
 #clearButton {
   background-color: #c0c0c0;
-}
-
-#defaultbtn {
-  background-color: white;
-  color: black;
-}
-
-#graybtn {
-  background-color: #232b2b;
-  color: #dc3d24;
-}
-
-#settings {
-  position: relative;
-  top: 50px;
 }
