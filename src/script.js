@@ -1,5 +1,6 @@
 import "./style.css";
 import "./timer.css";
+import $ from "jquery";
 import NoSleep from "nosleep.js";
 
 var body;

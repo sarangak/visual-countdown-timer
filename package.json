@@ -31,6 +31,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "jquery": "^3.4.1",
     "nosleep.js": "^0.9.0"
   }
 }
