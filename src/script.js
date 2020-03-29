@@ -117,7 +117,7 @@ function getInputAndStartIntervals() {
     alert("No negatives allowed!");
   } else {
     //(inputs are all zero.)
-    alert("Please enter disired time first.");
+    alert("Please enter desired time first.");
   }
 }
 
