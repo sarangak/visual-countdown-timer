@@ -29,11 +29,11 @@
 /* ENV Variables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Media breakpoint variables for use in media queries
-* 	Note: this section is currently commented out pending release of 
+* 	Note: this section is currently commented out pending release of
 * 	final CSS env() spec
-*  Breakpoints based on 
+*  Breakpoints based on
 *	 https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-* 
+*
 */
 
 /* CSS Variables
@@ -92,7 +92,7 @@ html {
 }
 
 /*  Dark Theme
-	Note: prefers-color-scheme selector support is still limited, but 
+	Note: prefers-color-scheme selector support is still limited, but
 	included for future and an example of defining a different base 'theme'
 */
 @media (prefers-color-scheme: dark) {
@@ -336,6 +336,7 @@ input[type="button"]:focus {
 }
 .button.button-primary,
 button.button-primary,
+button:enabled, /* Added by SK */
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {

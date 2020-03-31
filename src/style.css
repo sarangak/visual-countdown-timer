@@ -1,21 +1,9 @@
-#startButton {
-  background-color: green;
-}
-
-#stopButton {
-  background-color: red;
-}
-
-#resumeButton {
-  background-color: yellow;
-}
-
-#clearButton {
-  background-color: #c0c0c0;
-}
-
 #timers {
   margin-top: 2rem;
+}
+
+#timerClock {
+  font-weight: 600;
 }
 
 .timer {

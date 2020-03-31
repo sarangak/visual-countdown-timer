@@ -12,6 +12,10 @@ var seconds;
 var hoursElem;
 var minutesElem;
 var secondsElem;
+var startButton;
+var stopButton;
+var resumeButton;
+var clearButton;
 var total;
 var viewInterval;
 var updateInterval;
@@ -98,7 +102,7 @@ function keepUpdatingTimer() {
   }
 }
 
-function getInputAndStartIntervals() {
+function startTimer() {
   ding.play(); // this is a hack to force iOS browsers to play the alarm when the timer ends
   ding.pause(); // because iOS does not allow sound to play unless triggered by a user action, like a click
   noSleep.enable();
@@ -110,6 +114,8 @@ function getInputAndStartIntervals() {
     if (minutes < 60 && seconds < 60) {
       total = +hours * 3600 + +minutes * 60 + +seconds;
       startIntervals();
+      [stopButton, clearButton].forEach((e) => (e.disabled = false));
+      [startButton, resumeButton].forEach((e) => (e.disabled = true));
       var hidden = document.getElementById("hideBox").checked;
       if (hidden) {
         hideControls();
@@ -141,9 +147,23 @@ function clearIntervals() {
   clearInterval(updateInterval);
 }
 
+function resumeTimer() {
+  startIntervals();
+  [stopButton, clearButton].forEach((e) => (e.disabled = false));
+  [startButton, resumeButton].forEach((e) => (e.disabled = true));
+}
+
+function stopTimer() {
+  clearIntervals();
+  stopButton.disabled = true;
+  [startButton, resumeButton].forEach((e) => (e.disabled = false));
+}
+
 function clearTimer() {
   clearIntervals();
   settings.default();
+  startButton.disabled = false;
+  [stopButton, clearButton, resumeButton].forEach((e) => (e.disabled = true));
   hoursElem.value = 0;
   minutesElem.value = 0;
   secondsElem.value = 0;
@@ -154,7 +174,7 @@ function clearTimer() {
 var settings = {
   default: function defaultColors() {
     body.style.backgroundColor = "white";
-    body.style.color = "black";
+    body.style.color = "#222222";
   },
   gray: function gray() {
     body.style.backgroundColor = "#232B2B";
@@ -163,25 +183,22 @@ var settings = {
 };
 
 function setUpEventListeners() {
-  const startButton = document.getElementById("startButton");
-  startButton.addEventListener("click", getInputAndStartIntervals);
-
-  const stopButton = document.getElementById("stopButton");
-  stopButton.addEventListener("click", clearIntervals);
-
-  const resumeButton = document.getElementById("resumeButton");
-  resumeButton.addEventListener("click", startIntervals);
-
-  const clearButton = document.getElementById("clearButton");
+  startButton.addEventListener("click", startTimer);
+  stopButton.addEventListener("click", stopTimer);
+  resumeButton.addEventListener("click", resumeTimer);
   clearButton.addEventListener("click", clearTimer);
 }
 
 window.onload = function () {
-  setUpEventListeners();
-  drawTimer(0.0);
   body = document.querySelector("body");
   ding = document.getElementById("ding");
   hoursElem = document.getElementById("inputHours");
   minutesElem = document.getElementById("inputMinutes");
   secondsElem = document.getElementById("inputSeconds");
+  startButton = document.getElementById("startButton");
+  stopButton = document.getElementById("stopButton");
+  resumeButton = document.getElementById("resumeButton");
+  clearButton = document.getElementById("clearButton");
+  setUpEventListeners();
+  clearTimer();
 };
