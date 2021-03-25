@@ -1,19 +1,5 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html", // Default root is the "dist" directory
-  inlineSource: ".(js|css)$",
-});
-const htmlWebpackInlineSourcePlugin = new HtmlWebpackInlineSourcePlugin(
-  HtmlWebPackPlugin
-);
-const cleanWebpackPlugin = new CleanWebpackPlugin({
-  protectWebpackAssets: false,
-  cleanAfterEveryBuildPatterns: ["*.js"],
-});
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
 
 module.exports = {
   mode: "production",
@@ -34,8 +20,10 @@ module.exports = {
     ],
   },
   plugins: [
-    htmlWebpackPlugin,
-    htmlWebpackInlineSourcePlugin,
-    cleanWebpackPlugin,
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html", // Default root is the "dist" directory
+    }),
+    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/.(js|css)$/]),
   ],
 };

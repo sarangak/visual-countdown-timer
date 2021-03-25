@@ -4,9 +4,9 @@
   "description": "Visual Countdown Timer for Kids",
   "private": true,
   "scripts": {
-    "test": "prettylint 'src/**/*'",
+    "test": "prettier --check 'src/**/*'",
     "build": "webpack",
-    "start": "webpack-dev-server --disable-host-check"
+    "start": "webpack serve --disable-host-check"
   },
   "repository": {
     "type": "git",
@@ -21,14 +21,13 @@
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
-    "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
     "html-webpack-plugin": "^4.0.3",
     "prettier": "^2.0.2",
-    "prettylint": "^1.0.0",
+    "react-dev-utils": "^11.0.4",
     "style-loader": "^1.1.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "*",
+    "webpack-cli": "*",
+    "webpack-dev-server": "*"
   },
   "dependencies": {
     "jquery": "^3.5.0",
