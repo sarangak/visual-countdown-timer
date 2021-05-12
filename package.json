@@ -20,7 +20,7 @@
   "homepage": "https://github.com/sarangak/visual-countdown-timer#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.4.2",
+    "css-loader": "^5.2.4",
     "html-webpack-plugin": "^4.0.3",
     "prettier": "^2.0.2",
     "react-dev-utils": "^11.0.4",
