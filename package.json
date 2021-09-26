@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "test": "prettier --check 'src/**/*'",
-    "build": "webpack",
-    "start": "webpack serve --disable-host-check"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,14 +26,14 @@
     "react-dev-utils": "^11.0.4",
     "style-loader": "^1.1.3",
     "webpack": "*",
-    "webpack-cli": "*",
-    "webpack-dev-server": "^4.0.0-beta.3"
+    "webpack-cli": "*"
   },
   "dependencies": {
     "jquery": "^3.5.0",
     "nosleep.js": "^0.9.0"
   },
   "resolutions": {
-    "immer": "^9.0.6"
+    "immer": "^9.0.6",
+    "set-value": "^4.0.1"
   }
 }
