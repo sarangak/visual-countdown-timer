@@ -25,6 +25,19 @@ var speedMultiplier = 1;
 var fastModeToggle;
 var isRunning = false;
 
+function populateTimeSelect(select, max) {
+  if (!select) {
+    return;
+  }
+  select.innerHTML = "";
+  for (var i = 0; i <= max; i++) {
+    var option = document.createElement("option");
+    option.value = String(i);
+    option.textContent = String(i);
+    select.appendChild(option);
+  }
+}
+
 function drawTimer(frac) {
   $("div.timer").html(
     '<div class="frac"></div><div id="slice"' +
@@ -211,6 +224,9 @@ window.onload = function () {
   hoursElem = document.getElementById("inputHours");
   minutesElem = document.getElementById("inputMinutes");
   secondsElem = document.getElementById("inputSeconds");
+  populateTimeSelect(hoursElem, 120);
+  populateTimeSelect(minutesElem, 59);
+  populateTimeSelect(secondsElem, 59);
   startButton = document.getElementById("startButton");
   stopButton = document.getElementById("stopButton");
   resumeButton = document.getElementById("resumeButton");
