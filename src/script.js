@@ -1,6 +1,7 @@
 import "./normalize.css";
 import "./barebones.css";
 import "./style.css";
+import dingSound from "./ding.wav";
 import $ from "jquery";
 import NoSleep from "nosleep.js";
 
@@ -192,6 +193,7 @@ function setUpEventListeners() {
 window.onload = function () {
   body = document.querySelector("body");
   ding = document.getElementById("ding");
+  ding.src = dingSound;
   hoursElem = document.getElementById("inputHours");
   minutesElem = document.getElementById("inputMinutes");
   secondsElem = document.getElementById("inputSeconds");
