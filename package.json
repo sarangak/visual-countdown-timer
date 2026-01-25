@@ -4,7 +4,7 @@
   "description": "Visual Countdown Timer for Kids",
   "private": true,
   "scripts": {
-    "test": "prettier --check 'src/**/*'",
+    "test": "prettier --check 'src/**/*.{css,html,js}'",
     "build": "webpack",
     "serve": "python3 -m http.server --directory dist 8080"
   },

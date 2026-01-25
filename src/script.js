@@ -219,7 +219,9 @@ window.onload = function () {
   if (fastModeToggle) {
     var hostname = window.location.hostname;
     var isLocal =
-      hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "::1";
     if (isLocal) {
       document.querySelectorAll(".local-only").forEach(function (node) {
         node.style.display = "block";
