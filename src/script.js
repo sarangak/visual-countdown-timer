@@ -21,6 +21,9 @@ var total;
 var viewInterval;
 var updateInterval;
 var ding;
+var speedMultiplier = 1;
+var fastModeToggle;
+var isRunning = false;
 
 function drawTimer(frac) {
   $("div.timer").html(
@@ -139,13 +142,15 @@ function showControls() {
 }
 
 function startIntervals() {
-  viewInterval = setInterval(viewTimeRemaining, 500);
-  updateInterval = setInterval(keepUpdatingTimer, 1000);
+  viewInterval = setInterval(viewTimeRemaining, 500 / speedMultiplier);
+  updateInterval = setInterval(keepUpdatingTimer, 1000 / speedMultiplier);
+  isRunning = true;
 }
 
 function clearIntervals() {
   clearInterval(viewInterval);
   clearInterval(updateInterval);
+  isRunning = false;
 }
 
 function resumeTimer() {
@@ -188,6 +193,15 @@ function setUpEventListeners() {
   stopButton.addEventListener("click", stopTimer);
   resumeButton.addEventListener("click", resumeTimer);
   clearButton.addEventListener("click", clearTimer);
+  if (fastModeToggle) {
+    fastModeToggle.addEventListener("change", function () {
+      speedMultiplier = fastModeToggle.checked ? 10 : 1;
+      if (isRunning) {
+        clearIntervals();
+        startIntervals();
+      }
+    });
+  }
 }
 
 window.onload = function () {
@@ -201,6 +215,20 @@ window.onload = function () {
   stopButton = document.getElementById("stopButton");
   resumeButton = document.getElementById("resumeButton");
   clearButton = document.getElementById("clearButton");
+  fastModeToggle = document.getElementById("fastMode");
+  if (fastModeToggle) {
+    var hostname = window.location.hostname;
+    var isLocal =
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "::1";
+    if (isLocal) {
+      document.querySelectorAll(".local-only").forEach(function (node) {
+        node.style.display = "block";
+      });
+    }
+    speedMultiplier = fastModeToggle.checked ? 10 : 1;
+  }
   setUpEventListeners();
   clearTimer();
 };

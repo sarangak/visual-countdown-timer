@@ -15,6 +15,16 @@
   display: inline-block;
 }
 
+.timer::before {
+  content: "";
+  position: absolute;
+  inset: -0.02em;
+  border: 0.02em solid #c0c0c0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
 .timer > .frac {
   text-align: center;
   display: none;
@@ -25,6 +35,7 @@
   width: 1em;
   height: 1em;
   clip: rect(0px, 1em, 1em, 0.5em);
+  z-index: 2;
 }
 
 .timer > #slice.gt50 {
@@ -58,4 +69,8 @@
   background-color: #c0c0c0;
   width: 1em;
   height: 1em;
+}
+
+.local-only {
+  display: none;
 }
