@@ -7,4 +7,4 @@ It also changes color as the timer counts down.
 
 Working demo: https://sarangak.github.io/visual-countdown-timer/
 
-Don't like the intervals or colors? Fork this repo or  [Remix](https://glitch.com/edit/#!/remix/visual-countdown-timer) this project on Glitch!
+Don't like the intervals or colors? Fork this repo and customize it!

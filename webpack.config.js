@@ -17,6 +17,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.wav$/,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
