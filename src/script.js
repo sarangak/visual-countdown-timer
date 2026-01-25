@@ -147,11 +147,11 @@ function startTimer() {
 }
 
 function hideControls() {
-  $(".hideable").css("visibility", "hidden");
+  body.classList.add("controls-hidden");
 }
 
 function showControls() {
-  $(".hideable").css("visibility", "visible");
+  body.classList.remove("controls-hidden");
 }
 
 function startIntervals() {
