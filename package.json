@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "prettier --check 'src/**/*'",
-    "build": "webpack"
+    "build": "webpack",
+    "serve": "python3 -m http.server --directory dist 8080"
   },
   "repository": {
     "type": "git",

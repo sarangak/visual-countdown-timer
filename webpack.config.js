@@ -4,6 +4,9 @@ var InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
 module.exports = {
   mode: "production",
   entry: "./src/script.js",
+  output: {
+    publicPath: "./",
+  },
   module: {
     rules: [
       {
